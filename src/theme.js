@@ -197,3 +197,27 @@ export const themeSettings = (mode) => {
     },
   };
 };
+
+// React context for color mode
+// Function allows us to provide entire function through the app
+export const colorModeContext = createContext({
+  toggleColorMode: () => {},
+});
+
+export const useMode = () => {
+  const [mode, setMode] = useState("dark");
+
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () =>
+        setMode((prev) => (prev === "light" ? "dark" : "light")),
+    }),
+    []
+  );
+
+  // Creating the theme with MUI passing in mode with object of settings
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
+  // Allows us to create a context in which we can have easy access to condition of light or dark, as well as behavior functions
+  return [theme, colorMode];
+};
