@@ -27,7 +27,7 @@ Follow these steps to get the React Admin Dashboard App up and running on your l
 1. Clone this repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/garrza/react-admin.git
+   git clone https://github.com/garrza/react-admin.git
    ```
 
 2. Navigate to the project directory.
