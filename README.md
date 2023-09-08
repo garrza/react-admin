@@ -33,7 +33,7 @@ Follow these steps to get the React Admin Dashboard App up and running on your l
 2. Navigate to the project directory.
 
    ```bash
-   cd react-admin-dashboard-app
+   cd react-admin
    ```
 
 3. Install the required dependencies using npm or yarn.
