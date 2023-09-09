@@ -134,6 +134,12 @@ const Sidebar = () => {
                             selected={selected}
                             setSelected={setSelected }
                             />
+                            <Typography
+                            variant="h6"
+                            color={colors.black[300]}
+                            sx={{ m: "15px 0px 5px 20px"}}
+                            >
+                                Data</Typography>
                             <Item 
                             title="Manage team"
                             to="/team"
@@ -143,7 +149,7 @@ const Sidebar = () => {
                             />
                             <Item 
                             title="Contacts Information"
-                            to="/"
+                            to="/contacts"
                             icon={<ContactsOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected }
@@ -155,6 +161,12 @@ const Sidebar = () => {
                             selected={selected}
                             setSelected={setSelected }
                             />
+                            <Typography
+                            variant="h6"
+                            color={colors.black[300]}
+                            sx={{ m: "15px 0px 5px 20px"}}
+                            >
+                                Pages</Typography>
                             <Item 
                             title="Profile form"
                             to="/form"
@@ -176,6 +188,12 @@ const Sidebar = () => {
                             selected={selected}
                             setSelected={setSelected }
                             />
+                            <Typography
+                            variant="h6"
+                            color={colors.black[300]}
+                            sx={{ m: "15px 0px 5px 20px"}}
+                            >
+                                Charts</Typography>
                             <Item 
                             title="Bar chart"
                             to="/bar"
