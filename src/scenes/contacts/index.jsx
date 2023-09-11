@@ -13,11 +13,17 @@ const Contacts = () => {
         {
         field: "id", 
         headerName: "ID",
-        flex: "0.5",
+        flex: 0.5,
         },
-        {
-        field: "registrarId", 
-        headerName: "Registar ID", 
+        { 
+        field: "name", 
+        headerName: "Name", 
+        flex: 1
+        },
+        { 
+        field: "email", 
+        headerName: "Email", 
+        flex: 1
         },
         {
         field: "age", 
@@ -28,11 +34,6 @@ const Contacts = () => {
         { 
         field: "phone", 
         headerName: "Phone Number", 
-        flex: 1
-        },
-        { 
-        field: "email", 
-        headerName: "Email", 
         flex: 1
         },
         { 
@@ -49,6 +50,10 @@ const Contacts = () => {
         field: "zipCode", 
         headerName: "Zip Code", 
         flex: 1
+        },
+        {
+        field: "registrarId", 
+        headerName: "Registar ID", 
         },
     ]
 
@@ -85,6 +90,7 @@ const Contacts = () => {
                 // Data usually data goes into rows section in datagrid
                 rows={mockDataContacts}
                 columns={columns}
+                components={{Toolbar: GridToolbar}}
                 />
             </Box>
         </Box>
