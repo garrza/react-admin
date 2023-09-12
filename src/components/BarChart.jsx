@@ -39,13 +39,14 @@ const BarChart = ({ isDashboard = false }) => {
           },
         },
       }}
-      keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-      indexBy="country"
+
+      keys={["Thorfinn", "Askeladd", "Canute", "Bjorn", "Thorkell", "Leif", "Hild", "Gudrid"]}
+      indexBy="kills"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      colors={{ scheme: "nivo" }}
+      colors={{ scheme: "purples" }}
       defs={[
         {
           id: "dots",
@@ -76,7 +77,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "Inversion", // changed
+        legend: isDashboard ? undefined : "Kills", // changed
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -84,7 +85,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "MXN", // changed
+        legend: isDashboard ? undefined : "Drinks", // changed
         legendPosition: "middle",
         legendOffset: -40,
       }}
@@ -121,7 +122,7 @@ const BarChart = ({ isDashboard = false }) => {
       ]}
       role="application"
       barAriaLabel={function (e) {
-        return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
+        return e.id + ": " + e.drinks + " drinks, " + e.kills + " kills.";
       }}
     />
   );
