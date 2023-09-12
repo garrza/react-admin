@@ -5,7 +5,7 @@ import LineChart from "../../components/LineChart";
 const Line = () => {
   return (
     <Box m="20px">
-      <Header title="LINE CHART" subtitle="Simple Line Chart" />
+      <Header title="LINE CHART" subtitle="Kills per character" />
       <Box height="75vh">
         <LineChart />
       </Box>
