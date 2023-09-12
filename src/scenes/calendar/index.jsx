@@ -1,5 +1,6 @@
 import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import FullCalendar from "@fullcalendar/react";
+import { formatDate } from "@fullcalendar/core"
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -51,7 +52,67 @@ const Calendar = () => {
         <Header title="CALENDAR" subtitle="Full Calendar Interactive Page"/>
         {/* Splitting between actual events and our calendar app */}
         <Box display="flex" justifyContent="space-between">
-            
+            <Box flex="1 1 20%" backgroundColor="colors.black[400]" p="15px" borderRadius="4px">
+                <Typography variant="h5">Events</Typography>
+            <List>
+                {/* Mapping through our event list */}
+                {currentEvents.map((event) => (
+                    <ListItem
+                    key = {event.id}
+                    sx={{
+                        backgroundColor: colors.blue[800],
+                        margin: "10px 0",
+                        borderRadius: "2px"
+                    }}
+                    >
+                        <ListItemText
+                        primary = {event.title}
+                        secondary = {
+                            <Typography>
+                                {formatDate(event.start, {
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                })}
+                            </Typography>
+                        }
+                        />
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+        {/* CALENDAR */}
+        <Box flex="1 1 100%" ml="15px">
+            <FullCalendar 
+                height="75vh"
+                plugins={[
+                    dayGridPlugin,
+                    timeGridPlugin,
+                    interactionPlugin,
+                    listPlugin
+                ]}
+                headerToolbar={{
+                    left: "prev,next today",
+                    center: "title",
+                    right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
+                }}
+                initialView="dayGridMonth"
+                editable={true}
+                selectable={true}
+                selectMirror={true}
+                dayMaxEvents={true}
+                // Running event handler when event gets clicked
+                select={handleDateClick}
+                eventClick={handleEventClick}
+                // Saving events we have created into 'currentEvents' state created
+                // FullCalendar provides event handler + customizability for components and plugins
+                eventsSet={(events) => setCurrentEvents(events)}
+                initialEvents={[
+                    { id: "1234", title: "All day event", date: "2023-09-14" },
+                    { id: "4321", title: "Timed event", date: "2023-09-09" },
+                ]}
+            />
+            </Box>
         </Box>
     </Box>
 };
