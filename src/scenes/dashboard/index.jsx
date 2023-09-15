@@ -78,7 +78,8 @@ const Dashboard = () => {
             gridColumn="span 3" 
             backgroundColor={colors.purple[400]} 
             display="flex" alignItems="center" 
-            justifyContent="center">
+            justifyContent="center"
+            borderRadius="10px">
                 <StatBox 
                 title="392,202"
                 subtitle="New vikings"
@@ -93,7 +94,8 @@ const Dashboard = () => {
             gridColumn="span 3" 
             backgroundColor={colors.purple[400]} 
             display="flex" alignItems="center" 
-            justifyContent="center">
+            justifyContent="center"
+            borderRadius="10px">
                 <StatBox 
                 title="1,332,202"
                 subtitle="Horses ridden"
@@ -208,7 +210,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Drink revenue
           </Typography>
           <Box
             display="flex"
@@ -219,10 +221,10 @@ const Dashboard = () => {
             <ProgressCircle size="125" />
             <Typography
               variant="h5"
-              color={colors.yellow[500]}
+              color={colors.blue[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+              $32,352 revenue generated
             </Typography>
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
@@ -237,7 +239,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Sales Quantity
+            Kill Quantity
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -254,7 +256,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Geography Based Traffic
+            The vinland
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />
