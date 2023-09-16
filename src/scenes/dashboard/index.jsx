@@ -14,98 +14,118 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 
 const Dashboard = () => {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-    return <Box sx={{ m: "20px"}}>
-        <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard!"/>
+  return (
+    <Box m="20px">
+      {/* HEADER */}
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+
         <Box>
-            <Button
+          <Button
             sx={{
-                backgroundColor: colors.blue[300], 
-                color: colors.black[900], 
-                fontWeight: "bold", 
-                padding: "10px 20px"
+              backgroundColor: colors.blue[700],
+              color: colors.black[100],
+              fontSize: "14px",
+              fontWeight: "bold",
+              padding: "10px 20px",
             }}
-            >
-                <DownloadOutlinedIcon sx={{ mr: "10px"}}/>
-                Download Reports
-            </Button>
+          >
+            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+            Download Reports
+          </Button>
         </Box>
-        </Box>
+      </Box>
 
-        {/* GRID & CHARTS */}
-        <Box
+      {/* GRID & CHARTS */}
+      <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoFlow="140px"
-        gap="20px">
-            {/* ROW 1 */}
-            <Box 
-            gridColumn="span 3" 
-            backgroundColor={colors.purple[400]} 
-            display="flex" alignItems="center" 
-            justifyContent="center"
-            borderRadius="10px">
-                <StatBox 
-                title="12,300"
-                subtitle="Vinland population "
-                progress=".75"
-                increase="+20%"
-                icon={
-                    <Diversity3Icon sx={{color: colors.black[100], fontSize: "26px"}}/>
-                }
-                />
-            </Box>
-            <Box 
-            gridColumn="span 3" 
-            backgroundColor={colors.purple[400]} 
-            display="flex" alignItems="center" 
-            justifyContent="center"
-            borderRadius="10px">
-                <StatBox 
-                title="431,230"
-                subtitle="Drink revenue"
-                progress=".34"
-                increase="+34%"
-                icon={
-                    <PointOfSaleIcon sx={{color: colors.black[100], fontSize: "26px"}}/>
-                }
-                />
-            </Box>
-            <Box 
-            gridColumn="span 3" 
-            backgroundColor={colors.purple[400]} 
-            display="flex" alignItems="center" 
-            justifyContent="center"
-            borderRadius="10px">
-                <StatBox 
-                title="392,202"
-                subtitle="New vikings"
-                progress=".70"
-                increase="+4%"
-                icon={
-                    <PersonAddIcon sx={{color: colors.black[100], fontSize: "26px"}}/>
-                }
-                />
-            </Box>
-            <Box 
-            gridColumn="span 3" 
-            backgroundColor={colors.purple[400]} 
-            display="flex" alignItems="center" 
-            justifyContent="center"
-            borderRadius="10px">
-                <StatBox 
-                title="1,332,202"
-                subtitle="Horses ridden"
-                progress=".600"
-                increase="+10%"
-                icon={
-                    <TrafficIcon sx={{color: colors.black[100], fontSize: "26px"}}/>
-                }
-                />
-            </Box>
+        gridAutoRows="140px"
+        gap="20px"
+      >
+        {/* ROW 1 */}
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.purple[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="10px"
+        >
+          <StatBox
+            title="201,361"
+            subtitle="Current population"
+            progress="0.75"
+            increase="+14%"
+            icon={
+              <Diversity3Icon
+                sx={{ color: colors.blue[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.purple[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="10px"
+        >
+          <StatBox
+            title="431,225"
+            subtitle="Drink sale revenue"
+            progress="0.50"
+            increase="+21%"
+            icon={
+              <PointOfSaleIcon
+                sx={{ color: colors.blue[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.purple[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="10px"
+        >
+          <StatBox
+            title="32,441"
+            subtitle="New Vikings"
+            progress="0.30"
+            increase="+5%"
+            icon={
+              <PersonAddIcon
+                sx={{ color: colors.blue[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.purple[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="10px"
+        >
+          <StatBox
+            title="1,325,134"
+            subtitle="Horses ridden"
+            progress="0.80"
+            increase="+43%"
+            icon={
+              <TrafficIcon
+                sx={{ color: colors.blue[600], fontSize: "26px" }}
+              />
+            }
+          />
         </Box>
 
         {/* ROW 2 */}
@@ -113,6 +133,7 @@ const Dashboard = () => {
           gridColumn="span 8"
           gridRow="span 2"
           backgroundColor={colors.purple[400]}
+          borderRadius="10px"
         >
           <Box
             mt="25px"
@@ -120,8 +141,6 @@ const Dashboard = () => {
             display="flex "
             justifyContent="space-between"
             alignItems="center"
-            padding="20px"
-            borderRadius="10px"
           >
             <Box>
               <Typography
@@ -129,7 +148,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.black[100]}
               >
-                Revenue Generated
+                Economic death cost
               </Typography>
               <Typography
                 variant="h3"
@@ -156,6 +175,7 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.purple[400]}
           overflow="auto"
+          borderRadius="10px"
         >
           <Box
             display="flex"
@@ -208,9 +228,10 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.purple[400]}
           p="30px"
+          borderRadius="10px"
         >
           <Typography variant="h5" fontWeight="600">
-            Drink revenue
+            Campaign
           </Typography>
           <Box
             display="flex"
@@ -224,7 +245,7 @@ const Dashboard = () => {
               color={colors.blue[500]}
               sx={{ mt: "15px" }}
             >
-              $32,352 revenue generated
+              $48,352 revenue generated
             </Typography>
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
@@ -233,13 +254,14 @@ const Dashboard = () => {
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.purple[400]}
+          borderRadius="10px"
         >
           <Typography
             variant="h5"
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Kill Quantity
+            Drink Quantity
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
@@ -250,20 +272,22 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.purple[400]}
           padding="30px"
+          borderRadius="10px"
         >
           <Typography
             variant="h5"
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            The vinland
+            Worldwide viking tracker
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />
           </Box>
         </Box>
       </Box>
+    </Box>
+  );
 };
-
 
 export default Dashboard;
